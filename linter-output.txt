@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/maven-metadata.xml
+Progress (1): 237 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/maven-metadata.xml (237 B at 979 B/s)
+[INFO] 
+[INFO] --------------------------< com.example:demo >--------------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (default-cli) @ demo ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.899 s
+[INFO] Finished at: 2026-03-18T00:17:20+02:00
+[INFO] ------------------------------------------------------------------------

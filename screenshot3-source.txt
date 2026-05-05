@@ -1,0 +1,26 @@
+POST request:
+curl -i -X POST http://localhost:8082/api/deals -H "Content-Type: application/json" -d "{\"name\":\"Family SUV Discount\",\"brand\":\"Toyota\",\"model\":\"RAV4\",\"productionYear\":2023,\"price\":31999.99,\"description\":\"Low mileage family car\"}"
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   287    0   147  100   140    857    816 --:--:-- --:--:-- --:--:--  1678
+HTTP/1.1 201 
+Location: /api/deals/1
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 17 Mar 2026 22:19:39 GMT
+
+{"brand":"Toyota","description":"Low mileage family car","id":1,"model":"RAV4","name":"Family SUV Discount","price":31999.99,"productionYear":2023}
+
+GET request:
+curl -i http://localhost:8082/api/deals
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   149    0   149    0     0   2366      0 --:--:-- --:--:-- --:--:--  2403
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 17 Mar 2026 22:19:40 GMT
+
+[{"brand":"Toyota","description":"Low mileage family car","id":1,"model":"RAV4","name":"Family SUV Discount","price":31999.99,"productionYear":2023}]

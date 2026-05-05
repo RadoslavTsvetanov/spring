@@ -1,0 +1,19 @@
+Научих как да подредя един малък Spring Boot проект така, че да има ясен контролер, service слой, repository и автоматизиран Maven lifecycle. Полезно беше да видя как Checkstyle и JaCoCo могат да бъдат вързани директно към Maven фазите, така че качествените проверки да не зависят от ръчно изпълнение.
+
+Най-трудната част беше съвместимостта между наличната Java версия в средата и конфигурацията на проекта, както и настройването на тестовете така, че да работят надеждно със Spring Boot 4. След това дойде и задачата coverage report-ът и lint проверките да се изпълняват автоматично в правилните Maven фази, без да има отделни ръчни стъпки.
+
+В следваща версия може да се подобри валидацията на входните данни чрез Bean Validation, да се добави глобален exception handler, да се добави `GET /api/deals/{id}` endpoint и да се отделят DTO класовете от entity модела още по-стриктно. Може също да се добави OpenAPI документация и по-подробни негативни интеграционни тестове.
+
+Не разбрах напълно защо в тази среда Spring Boot 4 шаблонът беше създал зависимостите по начин, при който стандартният MockMvc подход не беше най-прекият вариант за тестовете. Затова интеграционният тест беше реализиран чрез реални HTTP заявки към случаен локален порт, което също е коректно решение.
+
+Пример за dependency injection има в `src/main/java/com/example/demo/dealership/CarDealController.java` на редове 21-25:
+`private final CarDealService service;`
+`public CarDealController(CarDealService service) {`
+`    this.service = service;`
+`}`
+
+Втори пример има в `src/main/java/com/example/demo/dealership/CarDealService.java` на редове 12-16:
+`private final CarDealRepository repository;`
+`public CarDealService(CarDealRepository repository) {`
+`    this.repository = repository;`
+`}`
